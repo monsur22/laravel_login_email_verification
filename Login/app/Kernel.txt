@@ -1,0 +1,7 @@
+    protected $routeMiddleware = [
+     //add Those Two
+
+        'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'admin'=> \App\Http\Middleware\AdminMiddleware::class,
+
+    ];
