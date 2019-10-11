@@ -33,7 +33,7 @@ class singinupController extends Controller
        
     
         if($checkemail=Singup::where('email',$request->email)->first()){
-            return redirect('/singemail')->with('taken',' Email  taken ');
+            return redirect('/singup')->with('taken',' Email  taken ');
             //return "email_taken";
                 
     
@@ -219,7 +219,7 @@ class singinupController extends Controller
                    
         // return redirect('/dashboard')->with('signup','Password Successfully Changed');
         if($user_role=='admin'){
-            return redirect('/dashboard');
+            return redirect('/admin');
         }
         elseif($user_role=='user'){
             return redirect('/user');
@@ -243,9 +243,9 @@ class singinupController extends Controller
             }
             public function logout(){
                 
-
+                session()->flush();
                 session()->forget('email');
-               session()->forget('firstname');
+                session()->forget('firstname');
                 session()->forget('lastname');
               
                 return redirect('/login');

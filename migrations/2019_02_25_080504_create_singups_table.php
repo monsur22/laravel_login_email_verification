@@ -15,12 +15,12 @@ class CreateSingupsTable extends Migration
     {
         Schema::create('singups', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('pnumber');
-            $table->string('email');
-            $table->string('user_role');
-            $table->string('password');
+            $table->string('firstname')->nullable();
+            $table->string('lastname')->nullable();
+            $table->string('pnumber')->nullable();
+            $table->string('email')->nullable();
+            $table->string('user_role')->nullable();
+            $table->string('password')->nullable();
             $table->timestamps();
         });
     }
